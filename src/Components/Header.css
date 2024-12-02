@@ -1,0 +1,92 @@
+.Header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye los elementos del header */
+    background-color: #ff5722; /* Color de fondo */
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0; /* Hace que toque la parte superior */
+    left: 0; /* Hace que el header empiece desde la izquierda */
+    width: 100%; /* Ocupa todo el ancho del viewport */
+    padding: 15px 30px; /* Reduce el padding para un diseño más compacto */
+    box-sizing: border-box;
+    z-index: 1000; /* Asegura que el header esté encima de otros elementos */
+}
+
+.container-logo {
+    flex: 1; /* El logo ocupa espacio proporcional */
+}
+
+.container-logo h1 {
+    color: white; /* Color blanco para el texto del logo */
+    font-size: 1.8em; /* Aumenta ligeramente el tamaño del texto */
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
+.categorias-container {
+    flex: 2; /* Las categorías ocupan más espacio */
+    display: flex;
+    justify-content: center; /* Centra el botón en su área */
+    position: relative; /* Posiciona el dropdown relativo al contenedor */
+}
+
+.categories {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1em; /* Tamaño ligeramente mayor */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; /* Agrega padding para un área clicable más grande */
+}
+
+.arrow {
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+
+/* Estilos para el dropdown */
+.dropdown {
+    position: absolute;
+    top: 40px; /* Aparece justo debajo del botón de categorías */
+    left: 50%; /* Centra el dropdown respecto al botón */
+    transform: translateX(-50%); /* Ajusta el dropdown horizontalmente */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    width: 150px;
+    z-index: 999; /* Asegura que el dropdown esté encima */
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.dropdown ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.icons {
+    flex: 1; /* Ajusta el espacio proporcional para los íconos */
+    display: flex;
+    gap: 20px; /* Espaciado entre íconos */
+    justify-content: flex-end; /* Alinea los íconos a la derecha */
+    align-items: center;
+    color: white;
+}
+
+.icon {
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+}
