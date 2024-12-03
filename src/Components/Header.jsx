@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "../Components/Header.css";
 
-const Header = () => {
+const Header = ({ onCategoriaSeleccionada }) => {
   const [ListaCategoriaAbierta, setListaCategoriaAbierta] = useState(false);
 
   const actualizarLista = () => {
     setListaCategoriaAbierta(!ListaCategoriaAbierta);
   };
 
+  const handleCategoriaClick = (categoria) => {
+    setListaCategoriaAbierta(false); // Cierra el dropdown
+    onCategoriaSeleccionada(categoria); // Llama a la función pasada desde el padre
+  };
+
+  
   return (
     <>
       <div className="Header-container">
@@ -21,11 +27,11 @@ const Header = () => {
           {ListaCategoriaAbierta && (
             <div className="dropdown">
               <ul>
-                <li>Alimentos</li>
-                <li>Bebidas</li>
-                <li>Limpieza</li>
-                <li>Tecnología</li>
-                <li>Hogar</li>
+                <li onClick={() => handleCategoriaClick("Alimentos")}>Alimentos</li>
+                <li onClick={() => handleCategoriaClick("Bebidas")}>Bebidas</li>
+                <li onClick={() => handleCategoriaClick("Limpieza")}>Limpieza</li>
+                <li onClick={() => handleCategoriaClick("Tecnología")}>Tecnología</li>
+                <li onClick={() => handleCategoriaClick("Hogar")}>Hogar</li>
               </ul>
             </div>
           )}
